@@ -32,10 +32,13 @@ module.exports = function (grunt) {
             }
         },
         sass: {
+            options: {
+                // implementation: require('node-sass'),
+                sourceMap: false,
+                sourcemap: 'none',
+                style: 'expanded'
+            },
             build: {
-                options: {
-                    style: 'expanded'
-                },
                 files: {
                     'src/css/app.css': 'src/scss/app.scss'
                 }
@@ -74,6 +77,8 @@ module.exports = function (grunt) {
 
     // Load the plugin that provides the all task.
     require('load-grunt-tasks')(grunt);
-
+    // grunt.loadNpmTasks('grunt-sass');
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    
     grunt.registerTask('default', ['phpcs', 'sass', 'cssmin', 'imagemin', 'jshint', 'uglify']);
 }
