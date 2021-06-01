@@ -1,0 +1,16 @@
+body {
+  background-color: #0d6efd;
+}
+
+ul {
+  list-style: none;
+}
+
+main {
+  padding: 1rem;
+}
+main * {
+  color: #fff;
+}
+
+/*# sourceMappingURL=app.css.map */
